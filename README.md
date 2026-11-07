@@ -44,11 +44,17 @@ blank or a placeholder.
 
 | Key | What it is | Needed for |
 |---|---|---|
+| `leadWeeks` | Weeks from deposit to collection in Tema | The question every buyer asks after price |
+| `showroom` | Street address or Ghana Post GPS code | The test drive page sends people there |
 | `gaId` | Google Analytics measurement ID | Knowing whether the market test worked |
 | `company` | Registered company name | The terms and privacy pages |
 | `address` | Registered address | The terms and privacy pages |
 | `email` | Contact and privacy email | A second contact route besides WhatsApp |
 | `dpc` | Data Protection Commission registration | Act 843 compliance on the privacy page |
+
+`cedis` is already set to 11.65, the rate the comparison footnote quotes. Every
+dollar price carries its cedi equivalent at that rate. Change it when the rate
+moves, and say so in the footnote at the same time.
 
 ## Checks
 
