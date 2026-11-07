@@ -134,6 +134,14 @@ input[type=range]{width:100%; accent-color:var(--sky)}
 .col.base{background:color-mix(in srgb, var(--line) 35%, transparent)}
 @media (max-width:860px){ .cmp{grid-template-columns:repeat(2,minmax(0,1fr))} .col:nth-child(2){border-right:0} .col{border-bottom:2px solid var(--line)} }
 .note{margin-top:20px; font-size:13px; color:var(--ink2); max-width:900px}
+/* customer quote */
+.quote{margin:34px 0 0; padding:0}
+.quote blockquote{margin:0; font-size:clamp(19px,2.1vw,25px); line-height:1.5; text-wrap:balance}
+.quote blockquote::before{content:""; display:block; width:64px; height:4px; margin-bottom:24px; background:linear-gradient(90deg,var(--eblue) 0 50%,var(--green) 50% 100%)}
+.quote figcaption{margin-top:26px; display:flex; flex-wrap:wrap; gap:6px 18px; align-items:baseline; font-size:15px; color:var(--ink2)}
+.quote figcaption .who{font-family:var(--display); font-size:17px; color:var(--ink)}
+.quote figcaption .sep{margin:0 8px; color:var(--ink2)}
+.quote figcaption a{color:var(--sky)}
 
 /* range */
 .rng{position:relative; margin-top:48px; padding-top:34px}
@@ -262,6 +270,7 @@ footer b{color:#FFFFFF}
     dpc      : '',               // Data Protection Commission registration number
     showroom : '',               // showroom street address or Ghana Post GPS code, for the test drive page
     leadWeeks: '',               // weeks from deposit to collection in Tema, e.g. '14 to 16'
+    quoteBy  : '',               // name to attribute the customer quote to, e.g. 'Ama Darko, Operations'
     cedis    : 11.65             // GHS to the dollar, the rate quoted in the comparison footnote
   };
   window.CX_GA_ID=CX.gaId;
@@ -409,12 +418,16 @@ footer b{color:#FFFFFF}
   </div>
 </section>
 
-<section class="sec alt" id="proven">
-  <div class="wrap" style="max-width:820px;text-align:center">
-    <h2>We run these trucks ourselves</h2>
-    <p class="lede" style="margin:18px auto 0">CryoChain collects fruit, vegetables, fish, meat and dairy at the farm gate, cools them within hours of picking, and delivers them cold to hotels, grocers, caterers and exporters across Ghana.</p>
-    <p class="lede" style="margin:16px auto 0">That is why the specification reads the way it does. A liftgate, because there is no loading dock at a farm gate. Bigger tires, because the last few kilometres are laterite. A box that holds minus 18 to plus 5 degrees, because the load is food and the afternoon is 32 degrees.</p>
-    <p style="margin-top:28px"><a class="btn btn-navy" href="https://cryochain.co" target="_blank" rel="noopener">See CryoChain</a></p>
+<section class="sec alt" id="in-service">
+  <div class="wrap" style="max-width:880px">
+    <h2>Already in service</h2>
+    <figure class="quote">
+      <blockquote>We load at the farm gate, where there is no dock and the last few kilometres are laterite. The liftgate and the tires deal with that. The box holds temperature through a 32 degree afternoon, which is the whole job. Half the food Ghana grows never gets eaten, and this is the part of that problem a truck can actually fix.</blockquote>
+      <figcaption>
+        <span class="who"><b>CryoChain</b><span class="cx-quote-by"></span></span>
+        <span>Cold chain logistics, Ghana. <a href="https://cryochain.co" target="_blank" rel="noopener">cryochain.co</a></span>
+      </figcaption>
+    </figure>
   </div>
 </section>
 
@@ -473,7 +486,7 @@ footer b{color:#FFFFFF}
     <div><h2>Who we work with</h2><ul class="list">
       <li>Truck, van and bus fleets</li><li>Hotels, offices and apartment buildings</li><li>Fuel stations and shopping centers</li><li>Hospitals, schools and government sites</li><li>Homes with an EV</li></ul></div>
     <div><h2>Why ChainX</h2><ul class="list">
-      <li>StarCharge equipment at distributor pricing</li><li>One team for the vehicle, the charger and the service</li><li>Fleet experience from running our own electric trucks</li><li>Local technicians in Tema, reaching across Ghana</li></ul>
+      <li>StarCharge equipment at distributor pricing</li><li>One team for the vehicle, the charger and the service</li><li>Fleet experience from the operators we supply and service</li><li>Local technicians in Tema, reaching across Ghana</li></ul>
       <p style="margin-top:22px"><a class="btn btn-navy" id="surveygo2" href="#" target="_blank" rel="noopener">Request a site survey</a></p></div>
   </div>
 </section>
@@ -838,6 +851,7 @@ footer b{color:#FFFFFF}
   if(CX.email) fill('.cx-email', ', or email <a href="mailto:'+esc(CX.email)+'">'+esc(CX.email)+'</a>.');
   if(CX.dpc) fill('.cx-dpc', ' Data Protection Commission registration '+esc(CX.dpc)+'.');
   if(CX.showroom) fill('.cx-showroom', esc(CX.showroom));
+  if(CX.quoteBy) fill('.cx-quote-by', '<span class="sep">/</span>'+esc(CX.quoteBy));
   if(CX.leadWeeks){
     fill('.cx-lead', 'About '+esc(CX.leadWeeks)+' weeks from deposit to collection in Tema.');
     fill('.cx-lead-row', '<span>Ready for collection</span><span>about '+esc(CX.leadWeeks)+' weeks</span>');
