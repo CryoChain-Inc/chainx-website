@@ -12,7 +12,7 @@ import json, os, re, struct, sys
 # Where the site is served from. Open Graph needs absolute URLs, so a link
 # shared on WhatsApp shows no preview card at all if this is wrong. Change it
 # here, in this one place, if the site moves to its own domain, and rebuild.
-SITE = 'https://chainx.cryochain.co/'
+SITE = 'https://chainx.co/'
 
 EAGER = {'img-01.jpg', 'img-02.jpg', 'img-53.jpg', 'img-03.jpg'}
 HERO = 'img-03.jpg'
